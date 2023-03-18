@@ -7,16 +7,48 @@ Prompt Engineering Notes | GPT-3 | GPT-3 | LLMs | Transformer Architecture
 - Large language model developed by OpenAI. 
 - GPT-4 stands for "Generative Pretrained Transformer 4" 
 - I am an instance of the Transformer architecture.
-- Primary purpose is to generate human-like responses by understanding and predicting the context of the input text.
+- Primary purpose is to generate human-like responses by understanding and predicting the context of the input text
+- Advanced deep learning originally model designed for NLP (natural language processing) tasks.
+- GPT-4, like its predecessor GPT-3, is based on the Transformer architecture, but it primarily utilizes the **decoder part** of the original Transformer model. 
+- It **does not** use the **encoder-decoder** structure found in the original *"Attention is All You Need"* paper by Vaswani et al.
 
 
 ### Transformer architecture
 
-- Advanced deep learning model designed for NLP (natural language processing) tasks. 
+The Transformer architecture is quite complex, next is a high-level Mermaid diagram illustrating its main components. Keep in mind that this is a simplified representation of the architecture.
 
-- GPT-4, like its predecessor GPT-3, is based on the Transformer architecture, but it primarily utilizes the **decoder part** of the original Transformer model. 
+```mermaid
+graph TB
+rawInput(Raw Input) --> tokenization(Tokenization)
+tokenization --> inputTokens(Input Tokens)
 
-- It **does not** use the **encoder-decoder** structure found in the original *"Attention is All You Need"* paper by Vaswani et al.
+inputTokens --> encoder(Encoder)
+encoder --> selfAttention(Self-Attention)
+selfAttention --> addNorm1(Add & Norm)
+addNorm1 --> feedForward(Feed Forward)
+feedForward --> addNorm2(Add & Norm)
+addNorm2 --> encoderOutput(Encoder Output)
+
+encoderOutput --> decoder(Decoder)
+rawTargetInput(Raw Target Input) --> targetTokenization(Target Tokenization)
+targetTokenization --> targetInput(Target Input)
+targetInput --> decoder
+decoder --> selfAttention2(Self-Attention)
+selfAttention2 --> addNorm3(Add & Norm)
+addNorm3 --> encoderDecoderAttention(Encoder-Decoder Attention)
+encoderDecoderAttention --> addNorm4(Add & Norm)
+addNorm4 --> feedForward2(Feed Forward)
+feedForward2 --> addNorm5(Add & Norm)
+addNorm5 --> decoderOutput(Decoder Output)
+
+decoderOutput --> linear(Dense Layer)
+linear --> softmax(Softmax)
+softmax --> output(Output)
+```
+
+In this diagram, the input flows through the Encoder, which consists of self-attention, add & normalize, and feed-forward layers. The output of the Encoder is then passed to the Decoder, which has similar components, along with an additional Encoder-Decoder attention mechanism. The Decoder output goes through a dense layer and softmax activation to produce the final output.
+
+Please note that this diagram is a simplified overview, and the actual Transformer architecture has multiple layers and more detailed components. For a comprehensive understanding of the Transformer architecture, I recommend referring to the original paper: ["Attention is All You Need"](https://arxiv.org/abs/1706.03762) by Vaswani et al.
 
 In the original Transformer model:
 	- **Encoder**: processes input sequences and creates contextualized representations, while... 
@@ -151,11 +183,11 @@ To explain how this works, let's break it down into steps:
 
 When you provide a new prompt, the **conversation history** (including your **previous prompts and the model's responses**  is **concatenated with the new prompt** to form **an extended input sequence** 
 
-2. ==Tokenization==
+2. **Tokenization**
 
 **The entire input sequence**  including the **conversation history and the new prompt**, is tokenized into a sequence of tokens. This allows the model to process and understand the context of the conversation.
 
-3. ==Decoder processing==
+3. **Decoder processing**
 
 The tokenized input sequence is fed into the decoder, which generates a response based on the context captured in the sequence. The **self-attention** mechanism within the decoder allows the model to attend to different parts of the input sequence, capturing the relationships and dependencies between tokens. This helps the model to maintain and use the context of the conversation when generating a response.
 
