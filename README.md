@@ -1,13 +1,17 @@
 # AI
 
-## GPT-4
+Prompt Engineering Notes | GPT-3 | GPT-3 | LLMs | Transformer Architecture
+
+## GPT-4 
 
 - Large language model developed by OpenAI. 
 - GPT-4 stands for "Generative Pretrained Transformer 4" 
 - I am an instance of the Transformer architecture.
 - Primary purpose is to generate human-like responses by understanding and predicting the context of the input text.
 
+
 ### Transformer architecture
+
 - Advanced deep learning model designed for NLP (natural language processing) tasks. 
 
 - GPT-4, like its predecessor GPT-3, is based on the Transformer architecture, but it primarily utilizes the **decoder part** of the original Transformer model. 
@@ -105,7 +109,9 @@ But the **token generation process remains inherently sequential**
 	
 Great questions! Let's break down how GPT-4 handles a prompt with personal information like an email address.
 
-1. **Tokenization**  When the input prompt contains words or phrases that are not part of the standard English dictionary, such as an email address, the tokenizer will **break them down into smaller chunks called tokens**  
+1. **Tokenization** 
+
+When the input prompt contains words or phrases that are not part of the standard English dictionary, such as an email address, the tokenizer will **break them down into smaller chunks called tokens**  
 
 GPT models use **subword tokenizers**  like **Byte-Pair Encoding** (BPE) or **WordPiece**  which can handle out-of-vocabulary words by breaking them into smaller subword units.
 
@@ -117,22 +123,29 @@ In your example, the input prompt is:
 
 The tokenizer will convert this into a sequence of tokens. For instance, the email address `gaston@gastonmorixe.com` might be tokenized into several subword tokens, such as **`gaston`, `@`, `gastonmor`, `ixe`, `.`, and `com`.** The exact tokenization depends on the specific tokenizer and its vocabulary.
 
-2. **Token embeddings**  Each token, whether it's a common English word like "hello" or a **subword** from an email address, will be **mapped to a continuous vector representation, called an embedding**  These embeddings are **learned during the training process** and **capture semantic and syntactic information** about the tokens.
+2. **Token embeddings** 
 
-3. **Positional encoding**  To maintain information about **each token's position in the sequence**, positional encoding is added to the token embeddings. This allows the model to **capture the relative ordering of the tokens**  which is crucial for **understanding the context** and **generating coherent responses** 
+Each token, whether it's a common English word like "hello" or a **subword** from an email address, will be **mapped to a continuous vector representation, called an embedding**  These embeddings are **learned during the training process** and **capture semantic and syntactic information** about the tokens.
 
-4. **Contextual understanding**  As the decoder processes the sequence of tokens, the **self-attention** mechanism allows it to capture the **relationships and dependencies between tokens**, including the **email address**. This enables the model to "**remember**  the email address and potentially use it in the generated response.
+3. **Positional encoding** 
+
+To maintain information about **each token's position in the sequence**, positional encoding is added to the token embeddings. This allows the model to **capture the relative ordering of the tokens**  which is crucial for **understanding the context** and **generating coherent responses** 
+
+4. **Contextual understanding** 
+
+As the decoder processes the sequence of tokens, the **self-attention** mechanism allows it to capture the **relationships and dependencies between tokens**, including the **email address**. This enables the model to "**remember**  the email address and potentially use it in the generated response.
+
 
 Keep in mind that GPT-4's ability to **remember** and use specific information like an email address depends on various factors, such as the **model size**  the **complexity** of the input prompt, and the **training** data it has seen. While GPT-4 can often generate coherent responses, it's not perfect and may sometimes fail to use or **remember certain details correctly**.
 
 
 
-###	Q: To be able to create a chat like this conversation, it seems that you somehow remember a big part of the previous  prompts I entered and also your own responses. Is that right? If so, can you help me understand how this works? More importantly my question is, how do you keep track of the past  context of the conversation? and my key question is: every time a new prompt is given to you, do you need to pass and run all the previous conversation to the decoder again?
-
+### Q: To be able to create a chat like this conversation, it seems that you somehow remember a big part of the previous  prompts I entered and also your own responses. Is that right? If so, can you help me understand how this works? More importantly my question is, how do you keep track of the past  context of the conversation? and my key question is: every time a new prompt is given to you, do you need to pass and run all the previous conversation to the decoder again?
 
 You are **correct** that, to generate contextually coherent responses in a conversation-like setting, GPT-4 needs to maintain information about the **previous prompts and responses**  The way GPT-4 does this is by **encoding the context of the conversation in the token sequence**  which is processed by the **decoder** 
 
 To explain how this works, let's break it down into steps:
+
 
 1. **Concatenating the conversation** 
 
@@ -146,7 +159,7 @@ When you provide a new prompt, the **conversation history** (including your **pr
 
 The tokenized input sequence is fed into the decoder, which generates a response based on the context captured in the sequence. The **self-attention** mechanism within the decoder allows the model to attend to different parts of the input sequence, capturing the relationships and dependencies between tokens. This helps the model to maintain and use the context of the conversation when generating a response.
 
-4. ==Output==
+4. **Output**
 
 The model generates a response to the new prompt, taking into account the context of the conversation encoded in the input sequence.
 
@@ -155,7 +168,9 @@ To answer your key question: **Yes, every time a new prompt is given, the previo
 
 It is important to note that GPT-4 and similar models have a **maximum context length they can process**  often referred to as the "context window" or "token limit." For instance, GPT-3 has a token limit of 2048 tokens. If a conversation exceeds this limit, the model may lose some context from the earlier parts of the conversation. In such cases, the input sequence needs to be **truncated or otherwise shortened to fit** within the model's context window. This limitation is one of the challenges when using these models for maintaining long-term context in a conversation.
 
-### Why does a "maximum context length" "context window" or "token limit" exist at all in first place? What prevents it to be huge or infinite?  
+
+
+### Q: Why does a "maximum context length" "context window" or "token limit" exist at all in first place? What prevents it to be huge or infinite?  
 
 The "maximum context length," "context window," or "token limit" exists in transformer-based models like GPT due to **several reasons**, mainly related to **computational resources** and **model architecture**  Here are the primary factors that contribute to these limits:
 
@@ -167,11 +182,9 @@ The memory requirements of transformer models **increase quadratically** with th
 
 The computational complexity of transformer models also increases with the input sequence length. Longer sequences demand more computation, which leads to increased processing times and higher energy consumption. This can be a concern for real-time applications, where response time is critical, or when running on resource-constrained devices.
 
-
 - **Model architecture**
 
 Transformer models have a **fixed input size** due to their architecture. They use **positional embeddings** to encode the position of each token in the input sequence, and these **embeddings are pre-computed and learned during training** for a **specific maximum sequence length**. While it's possible to create models with larger context windows, this increases the number of parameters, making the model larger and more computationally demanding.
-
 
 - **Training data limitations**
 
@@ -240,26 +253,38 @@ GPT-2 is just one example of a pre-trained model that can be fine-tuned in-house
 
 When working with a small dataset, it's often better to use smaller models that are less prone to **overfitting** and have fewer parameters to train. Here are a few transformer-based models suitable for small datasets:
 
-**DistilBERT**  DistilBERT is a smaller, distilled version of the BERT model. It retains approximately 95% of BERT's performance while reducing the number of parameters by around 40% and being faster to train and use for inference. DistilBERT is a suitable choice for smaller datasets, as it strikes a balance between model size and performance.
+**DistilBERT**  
+
+DistilBERT is a smaller, distilled version of the BERT model. It retains approximately 95% of BERT's performance while reducing the number of parameters by around 40% and being faster to train and use for inference. DistilBERT is a suitable choice for smaller datasets, as it strikes a balance between model size and performance.
 GitHub repository: https://github.com/huggingface/transformers/tree/master/examples/pytorch/language-modeling
 
-**ALBERT**  ALBERT (A Lite BERT) is another variant of BERT that uses parameter-reduction techniques like factorized embedding parameterization and cross-layer parameter sharing. These techniques reduce the number of parameters and memory footprint, making ALBERT more suitable for small datasets.
+**ALBERT**  
+
+ALBERT (A Lite BERT) is another variant of BERT that uses parameter-reduction techniques like factorized embedding parameterization and cross-layer parameter sharing. These techniques reduce the number of parameters and memory footprint, making ALBERT more suitable for small datasets.
 GitHub repository: https://github.com/google-research/albert
 
-**Small GPT-2**  OpenAI's GPT-2 model is available in multiple sizes, such as "small" (117M parameters) or even "mini" (125M parameters). These smaller versions of GPT-2 are more suited to smaller datasets, as they have fewer parameters and require less computation for training and inference.
+**Small GPT-2** 
+
+OpenAI's GPT-2 model is available in multiple sizes, such as "small" (117M parameters) or even "mini" (125M parameters). These smaller versions of GPT-2 are more suited to smaller datasets, as they have fewer parameters and require less computation for training and inference.
 Hugging Face Model Hub: https://huggingface.co/transformers/pretrained_models.html
 
-**TinyBERT**  TinyBERT is another smaller version of BERT, which is developed using a two-stage learning framework that involves teacher-student learning and task-specific fine-tuning. TinyBERT is designed for resource-constrained environments and can be a good choice for small datasets.
+**TinyBERT**  
+
+TinyBERT is another smaller version of BERT, which is developed using a two-stage learning framework that involves teacher-student learning and task-specific fine-tuning. TinyBERT is designed for resource-constrained environments and can be a good choice for small datasets.
 GitHub repository: https://github.com/huawei-noah/Pretrained-Language-Model/tree/main/TinyBERT
 
-**MobileBERT**  MobileBERT is a compact version of BERT designed for mobile and edge devices. It has a smaller model size and lower latency, making it suitable for small datasets and resource-constrained environments.
+**MobileBERT**  
+
+MobileBERT is a compact version of BERT designed for mobile and edge devices. It has a smaller model size and lower latency, making it suitable for small datasets and resource-constrained environments.
 GitHub repository: https://github.com/google-research/google-research/tree/master/mobilebert
+
 
 When working with a small dataset, it's essential to use techniques like **transfer learning** and **fine-tuning** to leverage the pre-training of these models on large-scale data. 
 
 Regularization techniques, such as **dropout** or **weight decay**, can also help prevent overfitting when training on small datasets. 
 
 Additionally, **data augmentation** techniques can be employed to artificially increase the size of the dataset and improve the model's generalization capabilities.
+
 
 
 ### Q: Facebook just released LLaMA: A foundational, 65-billion-parameter large language model
@@ -315,6 +340,7 @@ Group multiple input sequences together and process them simultaneously to take 
 While caching intermediate results may not be directly applicable in this case, the above strategies can help optimize the performance and speed of conversation-like interactions with GPT-based models. The choice of optimization methods will depend on the specific requirements of your application and the trade-offs you are willing to make between speed, quality, and resource usage.
 
 
+
 ### Q: I am thinking you may cache the Tokenization and positional embeddings (maybe self-attention results) of the previous conversation and start from there. If this is possible you wouldn't need to tokenize, create the embeddings and calculate self-attention that you're created before. But please, let me know if I am wrong. Maybe this is not possible or not totally possible. I want to understand. 
 
 Your idea of **caching the tokenization** and **positional embeddings** of the **previous conversation** to improve the efficiency **is interesting**  
@@ -368,9 +394,13 @@ The encrypted computation techniques I mentioned earlier, such as **homomorphic 
 
 Here's a brief overview of these techniques:
 
-1. **Homomorphic encryption**: This encryption scheme allows computations to be performed on encrypted data without decrypting it first. The result of the computation, when decrypted, is the same as if the operation was performed on the original, unencrypted data. Homomorphic encryption **prevents third parties from accessing the sensitive data because they only have access to the encrypted data,** and the decryption key is not shared with them.
+1. **Homomorphic encryption**: 
 
-2. **Secure multi-party computation (SMPC)**: SMPC is a cryptographic technique that enables multiple parties to **jointly compute a function over their inputs while keeping those inputs private**  In the context of machine learning, SMPC allows a model to be trained or used for inference on sensitive data without **revealing the data to any participating party, including third parties**  SMPC relies on protocols that ensure data privacy, **even if some of the participants are malicious** or attempt to access the sensitive data.
+This encryption scheme allows computations to be performed on encrypted data without decrypting it first. The result of the computation, when decrypted, is the same as if the operation was performed on the original, unencrypted data. Homomorphic encryption **prevents third parties from accessing the sensitive data because they only have access to the encrypted data,** and the decryption key is not shared with them.
+
+2. **Secure multi-party computation (SMPC)**
+
+SMPC is a cryptographic technique that enables multiple parties to **jointly compute a function over their inputs while keeping those inputs private**  In the context of machine learning, SMPC allows a model to be trained or used for inference on sensitive data without **revealing the data to any participating party, including third parties**  SMPC relies on protocols that ensure data privacy, **even if some of the participants are malicious** or attempt to access the sensitive data.
 
 Both homomorphic encryption and SMPC provide strong privacy-preserving guarantees, making it extremely challenging, if not practically impossible, for third parties like OpenAI to access the sensitive data. However, it's important to note that these techniques are not without their **limitations** 
 
@@ -388,21 +418,39 @@ Federated learning is a decentralized approach to machine learning, where multip
 
 Here's a high-level overview of how federated learning works:
 
-1. **Initialize the model**: A global model is initialized on a central server. This model is shared with participating nodes or devices, each of which has its own local dataset.
+1. **Initialize the model**
 
-2. **Local model training**: Each node trains the model on its local dataset, generating local model updates or gradients. This process can include multiple iterations and epochs, just like in traditional machine learning.
+A global model is initialized on a central server. This model is shared with participating nodes or devices, each of which has its own local dataset.
 
-3. **Aggregate updates**: The local model updates from each node are sent back to the central server. The server then aggregates these updates, typically using methods like averaging or weighted averaging.
+2. **Local model training**
 
-4. **Update the global model**: The central server updates the global model with the aggregated updates, improving the model's performance based on the insights learned from all the local datasets.
+Each node trains the model on its local dataset, generating local model updates or gradients. This process can include multiple iterations and epochs, just like in traditional machine learning.
 
-5. **Repeat the process**: Steps 2-4 are repeated iteratively until the global model converges or reaches a satisfactory level of performance.
+3. **Aggregate updates**
 
-Federated learning has several advantages:
+The local model updates from each node are sent back to the central server. The server then aggregates these updates, typically using methods like averaging or weighted averaging.
 
-- **Data privacy**: Since raw data never leaves the local nodes, federated learning helps protect sensitive information and comply with data privacy regulations.
-- **Reduced bandwidth and storage requirements**: Sharing model updates instead of raw data reduces the amount of data that needs to be transmitted and stored centrally.
-- **Scalability**: Federated learning can scale to a large number of nodes, as the learning process is primarily distributed across the participating devices.
+4. **Update the global model**
+
+The central server updates the global model with the aggregated updates, improving the model's performance based on the insights learned from all the local datasets.
+
+5. **Repeat the process**
+
+Steps 2-4 are repeated iteratively until the global model converges or reaches a satisfactory level of performance.
+
+**Federated learning** has several advantages:
+
+- **Data privacy**
+
+Since raw data never leaves the local nodes, federated learning helps protect sensitive information and comply with data privacy regulations.
+
+- **Reduced bandwidth and storage requirements**
+
+Sharing model updates instead of raw data reduces the amount of data that needs to be transmitted and stored centrally.
+
+- **Scalability**
+
+Federated learning can scale to a large number of nodes, as the learning process is primarily distributed across the participating devices.
 
 However, federated learning also has its challenges:
 
@@ -416,10 +464,11 @@ Despite these challenges, federated learning is a promising approach for trainin
 
 ### Q: What is fine-tuning and how it works?
 
+> TODO:
+
 
 
 ### Q: So you run my prompt in a GPU? Where do you use GPUs? How big is a model like yours compared to previous versions? I'm trying to learn and helps me a lot, Thank you!
-
 
 As an AI language model, I don't have direct control over the hardware used for processing your prompts. However, I can provide you with some general information about how language models like mine are typically run and the hardware utilized.
 
@@ -433,12 +482,16 @@ I'm glad to help you learn more about language models and their underlying infra
 
 
 
-### Q: How would I design a prompt to be able to query external data? 
+## External APIs
+
+Design, Integration and Prompt Engineering
 
 ### Q: How would I design or engineer a prompt or a GPT like LLM to be able to query external data? I don't mean the model it self will fetch or connect to external APIs, I mean how can I design or engineer a prompt that a GPT/LLM model would be able to give me some hint or commands to fetch for external data when it needs it. Let's say someone asks something related to the weather, a LLM is not updated in realtime so it needs to respond with some kind of command that an intermediatry system will understand, fetch that requested realt-time data and add it back to the context of the input prompt while the user sees in the UI "Fetching data from X". In the example of the wheather, if a user asks "How is the weather like?" the LLM/GTP should somehow understand that it can't know this realtima data and needs to ask for it but not to the user (it will be transparent to the user), to the internal system that will recognize the commands and add the resolved real-time weather data back.
 
+To achieve this, you can design a **two-step** process where the language model:
 
-To achieve this, you can design a two-step process where the language model first generates a command or query for the external data, and then, once the data is fetched, it incorporates the fetched data into its response.
+1. first generates a command or query for the external data, and then, once the data is fetched,
+2. it incorporates the fetched data into its response.
 
 Here's an outline of the process:
 
@@ -453,22 +506,46 @@ Fetch data: Your intermediate system should recognize this command, fetch the re
 
 Re-prompt with fetched data: Construct a new prompt that includes the fetched data and send it to the language model:
 
-User asks: "How is the weather like?"
-Fetched weather data: "sunny and 75°F"
+User asks: `"How is the weather like?"`
+Fetched weather data: `"sunny and 75°F"`
 Model, please answer the user's question using the fetched data.
 Generate final response: The language model should now generate a response that incorporates the fetched data:
 
-Model response: "The weather is sunny and 75°F."
-Display response: Display the model's response to the user in your UI.
+Model response: `"The weather is sunny and 75°F."`
+Display response: `Display the model's response to the user in your UI.`
 
 This two-step process allows the language model to act as an intermediary between the user and the external data source, effectively generating commands for fetching real-time data and incorporating that data into its responses. By designing the prompts and commands in a structured manner, you can create an interaction flow that transparently fetches and integrates real-time data into the language model's responses.
 
 
-### Q: Awesome, can you give me an full example?
 
+### Q: Can you write a mermaid diagram explaining the parts of how GPT-4 works from the input to the output as you explaned to me before?
+
+```mermaid
+sequenceDiagram
+participant User
+participant UI
+participant Intermediate_System as Intermediate System
+participant Language_Model as Language Model
+participant External_API as External API
+
+User->>UI: Ask a question
+UI->>Intermediate_System: Relay user's question
+Intermediate_System->>Language_Model: Initial prompt with user's question
+Language_Model->>Intermediate_System: Generate command for fetching external data
+Intermediate_System->>External_API: Fetch real-time data
+External_API->>Intermediate_System: Return fetched data
+Intermediate_System->>Language_Model: Re-prompt with fetched data
+Language_Model->>Intermediate_System: Generate final response
+Intermediate_System->>UI: Relay response
+UI->>User: Display response to the user
+```
+
+
+### Q: Awesome, can you give me an full example?
 
 Certainly! Let's go through a full example of asking for the current price of a cryptocurrency, such as Bitcoin. In this example, we'll use a hypothetical language model called LLM, but the process is applicable to other models like GPT-3 as well.
 
+```
 User's question: The user asks about the current price of Bitcoin.
 
 User: "What is the current price of Bitcoin?"
@@ -478,21 +555,34 @@ Prompt: "User asks: 'What is the current price of Bitcoin?' If you need external
 Generate command: The LLM generates a response with a command to fetch the required data.
 
 LLM response: "FETCH_BITCOIN_PRICE"
-Fetch data: Your intermediate system recognizes the "FETCH_BITCOIN_PRICE" command and fetches the current price of Bitcoin from a reliable API, such as CoinGecko or CoinMarketCap. Let's say the fetched price is $45,000.
+```
 
-Re-prompt with fetched data: Create a new prompt that includes the fetched data and send it to the LLM.
+Fetch data: Your intermediate system recognizes the `"FETCH_BITCOIN_PRICE"` command and fetches the current price of Bitcoin from a reliable API, such as CoinGecko or CoinMarketCap. Let's say the fetched price is $45,000.
 
-**Prompt:** "User asks: 'What is the current price of Bitcoin?' Fetched Bitcoin price: $45,000. Please answer the user's question using the fetched data."
+Re-prompt with fetched data: **Create a new prompt** that **includes the fetched data** and send it to the LLM.
+
+**Prompt:** 
+
+```
+"User asks: 'What is the current price of Bitcoin?' Fetched Bitcoin price: $45,000. Please answer the user's question using the fetched data."
+```
+
 Generate final response: The LLM generates a response that incorporates the fetched data.
 
+```
 LLM response: "The current price of Bitcoin is $45,000."
+```
+
 Display response: Display the LLM's response to the user in your UI.
 
+```
 UI: "The current price of Bitcoin is $45,000."
+```
+
 By following this process, you can create a seamless interaction flow that transparently fetches real-time data and incorporates it into the language model's response. This approach can be applied to various scenarios, such as weather data, stock prices, and other real-time information.
 
 
-### Great, can you give me that prompt in a way I can copy and paste it in the playground to try? Please, also include the possibility of the user asking for weather data in his city
+### Q: Great, can you give me that prompt in a way I can copy and paste it in the playground to try? Please, also include the possibility of the user asking for weather data in his city
 
 Here's a prompt you can use in the playground to test the example with both Bitcoin price and weather data. Remember, since I'm an AI language model, I'm unable to fetch real-time data myself. You can use this prompt as a starting point, but you'll need to implement the intermediate system and data fetching in your own application for a complete solution.
 
@@ -507,7 +597,7 @@ If you need external data to answer any of these questions, please provide a com
 User's question: "What's the weather like today in New York City?"
 ```
 
-Replace the last line ("User's question: ...") with the actual question you want to ask. The language model should generate a command for fetching external data based on the given question. Remember, to fetch and incorporate real-time data, you'll need to implement the intermediate system and data fetching as described in the previous examples.
+Replace the last line `("User's question: ...")` with the actual question you want to ask. The language model should generate a command for fetching external data based on the given question. Remember, to fetch and incorporate real-time data, you'll need to implement the intermediate system and data fetching as described in the previous examples.
 
 **Using**
 Mode: Complete
@@ -533,7 +623,11 @@ User's question: "What's the weather like today in New York City?"
 ```
 
 
+<img width="1143" alt="image" src="https://user-images.githubusercontent.com/637225/226102224-a6c4c028-1e68-4709-9de5-cbdb58cc6d21.png">
+
+
 Custom prompt by me try #1
+
 ```
 User may ask questions that require 3rd party API to get realtime data. For example here are some questions that may be asked that require external data:
 1. "What is the current price of Bitcoin?"
@@ -603,6 +697,7 @@ Please REPLY to the USER using the fetched data in a human like and friendly sty
 ++REPLY: The current price of Bitcoin is $27,501.70. Enjoy your day!
 ```
 
+continues...
 
 ```
 User may ask questions that require 3rd party API to get realtime data. For example here are some questions that may be asked that require external data:
@@ -675,11 +770,18 @@ REPLY: The current president of Uruguay is Luis Lacalle Pou. He is the youngest 
 Notice that adding `Never reply with data you may have but has the smallest chance to change since you were trained.`  prevented the model to try reply the user's question without asking for an external datasource. 
 
 And I forgot to add the query at the end, lol. 
+
 ### Q: How does attention work? What does it mean?
+
+> TODO:
 
 ### Q: How does codex work? How was it trained? Does it use the transformer architecture? 
 
+> TODO:
+
 ### Q: How can I use AI to create a DMX intelligent lighting designer? Can I use computer vision to feed great shows from video and train it?
+
+> TODO:
 
 ---
 
@@ -735,3 +837,8 @@ GPT-4 and other large language models have a wide range of applications, includi
 These are just a few examples of the potential applications of GPT-4 and similar language models. As research progresses and models continue to improve, we can expect to see even more innovative uses for natural language processing tasks.
 
 Please let me know if you'd like more information about a specific topic or aspect related to GPT-4 or the Transformer architecture.
+
+
+# License
+
+MIT 2023 - Gaston Morixe & OpenAI GTP-4
