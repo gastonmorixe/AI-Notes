@@ -1,4 +1,4 @@
-# AI
+# AI 🔮 ✨
 
 Prompt Engineering Notes | GPT-3 | GPT-3 | LLMs | Transformer Architecture
 
