@@ -1,6 +1,6 @@
 # AI 🔮 ✨
 
-Prompt Engineering Notes | GPT-3 | GPT-3 | LLMs | Transformer Architecture
+Prompt Engineering Notes | GPT-3 | GPT-4 | LLMs | Transformer Architecture
 
 ## GPT-4
 
