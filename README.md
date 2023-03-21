@@ -14,6 +14,9 @@ Prompt Engineering Notes | GPT-3 | GPT-4 | LLMs | Transformer Architecture
   - Youtube: [The spelled-out intro to neural networks and backpropagation: building micrograd](https://www.youtube.com/watch?v=VMj-3S1tku0) by [Andrej Karpathy](https://karpathy.ai/zero-to-hero.html)
 - [geohot/tinygrad](https://github.com/geohot/tinygrad)
 
+- [jaymody/picoGPT](https://github.com/jaymody/picoGPT)
+
+
 ## GPT-4
 
 - Large language model developed by OpenAI.
