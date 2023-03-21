@@ -2,6 +2,12 @@
 
 Prompt Engineering Notes | GPT-3 | GPT-4 | LLMs | Transformer Architecture
 
+## Reources
+
+- [Huggingface Course](https://huggingface.co/course)
+- [HF - Byte-Pair Encoding tokenization](https://huggingface.co/course/chapter6/5?fw=pt)
+- [Wiki - Byte-Pair Encoding tokenization](https://en.wikipedia.org/wiki/Byte_pair_encoding)
+
 ## GPT-4
 
 - Large language model developed by OpenAI.
