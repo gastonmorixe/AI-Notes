@@ -2,11 +2,17 @@
 
 Prompt Engineering Notes | GPT-3 | GPT-4 | LLMs | Transformer Architecture
 
-## Reources
+## Resources
 
 - [Huggingface Course](https://huggingface.co/course)
 - [HF - Byte-Pair Encoding tokenization](https://huggingface.co/course/chapter6/5?fw=pt)
 - [Wiki - Byte-Pair Encoding tokenization](https://en.wikipedia.org/wiki/Byte_pair_encoding)
+
+## Projects
+
+- [karpathy/micrograd](https://github.com/karpathy/micrograd)
+  - Youtube: [The spelled-out intro to neural networks and backpropagation: building micrograd](https://www.youtube.com/watch?v=VMj-3S1tku0) by [Andrej Karpathy](https://karpathy.ai/zero-to-hero.html)
+- [geohot/tinygrad](https://github.com/geohot/tinygrad)
 
 ## GPT-4
 
