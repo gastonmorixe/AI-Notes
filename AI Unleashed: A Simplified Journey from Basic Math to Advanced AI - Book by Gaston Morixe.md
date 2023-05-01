@@ -1,30 +1,4 @@
-# AI Unleashed: A Simplified Journey from Basic Math to Advanced AI (2023 r001)
-
-## Copyright 
-
-© 2023 Gaston Morixe
-
-All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
-
-This book is a work of non-fiction. Unless otherwise noted, the author and the publisher make no explicit guarantees as to the accuracy of the information contained in this book and in some cases, names of people and places have been altered to protect their privacy.
-
-ISBN: 
-
-Published by MORIXE MEDIA HOUSE, LLC
-
-Printed in Internet
-
-First Printing, 2023
-
-For permissions requests, write to the publisher, addressed “Attention: Permissions Coordinator,” at the address below.
-
-gaston@gastonmorixe.com
-gastonmorixe.com
-
-Disclaimer
-
-The information in this book is meant to supplement, not replace, proper (name your subject) training. Like any (type of activity), it carries some inherent risk. The authors and publisher advise readers to take full responsibility for their safety and know their limits. Before practising the skills described in this book, be sure that your equipment is well maintained, and do not take risks beyond your level of experience, aptitude, training, and comfort level.
-
+# AI Unleashed: A Simplified Journey from Basic Math to Advanced AI (2023 r002)
 
 ## Table of Contents
 
@@ -131,7 +105,7 @@ The information in this book is meant to supplement, not replace, proper (name y
 ---
 
 
-## Introduction
+## Introduction [🎧](https://soundbite.speechify.com/bite/U58K)
 
 Hello, and welcome to the exciting world of Artificial Intelligence (AI)! If you're holding this book, there's a good chance that you're fascinated by AI, and want to dive deep into it. Maybe you've seen movies with intelligent robots, or heard about self-driving cars, or maybe you're just curious about how YouTube seems to always know exactly what video to recommend next. But wherever your interest comes from, one thing is for sure: you're about to embark on an amazing journey.
 
@@ -152,3 +126,30 @@ Along the way, there will be plenty of examples, analogies, and exercises to hel
 So, are you ready to dive in and explore the incredible world of AI? Let's get started!
 
 Remember: AI isn't magic. It's just math, and with this book, you'll be able to unlock its secrets. So buckle up, and let's embark on this exciting journey together!
+
+
+## Copyright 
+
+© 2023 Gaston Morixe
+
+All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+
+This book is a work of non-fiction. Unless otherwise noted, the author and the publisher make no explicit guarantees as to the accuracy of the information contained in this book and in some cases, names of people and places have been altered to protect their privacy.
+
+ISBN: 
+
+Published by MORIXE MEDIA HOUSE, LLC
+
+Printed in Internet
+
+First Printing, 2023
+
+For permissions requests, write to the publisher, addressed “Attention: Permissions Coordinator,” at the address below.
+
+gaston@gastonmorixe.com
+
+gastonmorixe.com
+
+Disclaimer
+
+The information in this book is meant to supplement, not replace, proper (name your subject) training. Like any (type of activity), it carries some inherent risk. The authors and publisher advise readers to take full responsibility for their safety and know their limits. Before practising the skills described in this book, be sure that your equipment is well maintained, and do not take risks beyond your level of experience, aptitude, training, and comfort level.
