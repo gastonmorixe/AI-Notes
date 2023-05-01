@@ -146,7 +146,7 @@ Think of differentiation as the speedometer of your car - it tells you how fast 
 
 Integration, on the other hand, is like the odometer of your car. It's all about accumulation. If you wanted to know how much distance you've covered on your function road trip, integration would be your go-to tool. It's like having a handy travel diary that keeps track of all your mathematical adventures!
 
-Real-life Applications of Calculus in AI
+### Real-life Applications of Calculus in AI
 
 You might be wondering, "This road trip is fun and all, but what does it have to do with AI?" As it turns out, calculus is like the fuel that powers the AI car.
 
