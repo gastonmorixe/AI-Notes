@@ -1,4 +1,4 @@
-# AI Unleashed: A Simplified Journey from Basic Math to Advanced AI (2023 r002)
+# AI Unleashed: A Simplified Journey from Basic Math to Advanced AI (2023 r003)
 
 ## Table of Contents
 
@@ -126,6 +126,35 @@ Along the way, there will be plenty of examples, analogies, and exercises to hel
 So, are you ready to dive in and explore the incredible world of AI? Let's get started!
 
 Remember: AI isn't magic. It's just math, and with this book, you'll be able to unlock its secrets. So buckle up, and let's embark on this exciting journey together!
+
+
+## Chapter 3: Venturing into Calculus
+
+### Limits and Continuity
+
+Imagine you're on a road trip, and you're trying to reach a destination that's constantly moving away from you. Just as you're about to reach it, it moves a little further away. Frustrating, right? But what if I told you that despite this, you could still technically "reach" your destination? Well, welcome to the concept of limits!
+
+In simple terms, a limit in calculus is the value that a function approaches as the input (or variable) approaches a certain value. It's like saying, "As I get closer and closer to this point, where does my function end up?"
+
+On the other hand, continuity is the idea that you can draw the graph of a function without lifting your pen from the paper. It's a smooth, unbroken journey, much like a scenic road trip without any bumps or detours.
+
+### Differentiation and Integration
+
+Now, let's move on to some more exciting parts of our mathematical journey - differentiation and integration, the two fundamental operations in calculus.
+
+Think of differentiation as the speedometer of your car - it tells you how fast your function is changing at any given point. If your function was a rollercoaster, the derivative would tell you the steepness of your ride at different points. It's like the ultimate thrill-seeker's guide to the function rollercoaster!
+
+Integration, on the other hand, is like the odometer of your car. It's all about accumulation. If you wanted to know how much distance you've covered on your function road trip, integration would be your go-to tool. It's like having a handy travel diary that keeps track of all your mathematical adventures!
+
+Real-life Applications of Calculus in AI
+
+You might be wondering, "This road trip is fun and all, but what does it have to do with AI?" As it turns out, calculus is like the fuel that powers the AI car.
+
+For instance, when an AI is learning from data, it often needs to adjust its parameters to get better at its task. This process, called optimization, is like navigating a landscape to find the lowest point. Here, calculus helps us determine the direction to move in, and how big of a step to take - it's like our GPS in the landscape of AI.
+
+Another application is in neural networks, the building blocks of many AI systems. When a neural network is trained, it uses a process called backpropagation, which relies on - you guessed it - calculus!
+
+So, as you can see, calculus is more than just an abstract concept; it's a key part of the magic behind AI. As we delve deeper into AI in the later chapters, you'll see even more of how these calculus concepts come into play. But for now, buckle up and enjoy the ride as we continue on our mathematical road trip!
 
 
 ## Copyright 
